@@ -1,0 +1,8 @@
+#EXTRA_CFLAGS = -Wall -g //deprecated
+ccflags-y := -Wall -g -DDEBUG   #$(CC)
+#asflags-y :=   #$(AS)
+#ldflags-y :=   #$(LD)
+
+obj-m = mymodule.o
+mymodule-y = bypass_block_device.o \
+            device_operations.o
