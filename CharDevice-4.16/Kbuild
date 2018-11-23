@@ -1,0 +1,9 @@
+ccflags-y := -Wall -g -DDEBUG
+
+OBJS := $(patsubst %.c, %.o,$(notdir $(wildcard $(PWD)/*.c)))
+OBJS += ${SRC_OBJS}
+
+clean-files := ${SRC_OBJS}
+
+obj-m = test_chardev.o
+test_chardev-y = $(OBJS)
